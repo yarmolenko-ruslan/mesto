@@ -1,6 +1,12 @@
 .content {
   max-width: 880px;
-  width: 100%;
   margin: 0 auto;
-  padding: 40px 15px 66px;
+  padding: 40px 0 68px;
+}
+
+@media (max-width: 940px) {
+  .content {
+    padding-left: 19px;
+    padding-right: 19px;
+  }
 }

@@ -1,6 +1,60 @@
+/* import global */
+
 @import url(../vendor/normalize.css);
+@import url(../fonts/fonts.css);
 @import url(../blocks/page/page.css);
 @import url(../blocks/link/link.css);
+@import url(../blocks/content/content.css);
+
+/* import header */
+
 @import url(../blocks/header/header.css);
 @import url(../blocks/logo/logo.css);
-@import url(../blocks/content/content.css);
+
+/* import profile */
+
+@import url(../blocks/profile/profile.css);
+@import url(../blocks/profile/__avatar/profile__avatar.css);
+@import url(../blocks/profile/__button/profile__button.css);
+@import url(../blocks/profile/__info-button/profile__info-button.css);
+@import url(../blocks/profile/__info-subtitle/profile__info-subtitle.css);
+@import url(../blocks/profile/__info-text/profile__info-text.css);
+@import url(../blocks/profile/__info-title/profile__info-title.css);
+@import url(../blocks/profile/__info/profile__info.css);
+
+/* import modal */
+
+@import url(../blocks/modal/modal.css);
+@import url(../blocks/modal/__form/modal__form.css);
+@import url(../blocks/modal/_condition/modal_condition_visible.css);
+@import url(../blocks/modal/__button/modal__button.css);
+@import url(../blocks/modal/__close/modal__close.css);
+@import url(../blocks/modal/__input/modal__input.css);
+@import url(../blocks/modal/__title/modal__title.css);
+@import url(../blocks/modal/__input/_place/modal__input_place_bottom.css);
+
+/* import elements и element */
+
+@import url(../blocks/elements/elements.css);
+@import url(../blocks/elements/__list/elements__list.css);
+@import url(../blocks/element/element.css);
+@import url(../blocks/element/__image/element__image.css);
+@import url(../blocks/element/__info/element__info.css);
+@import url(../blocks/element/__like/element__like.css);
+@import url(../blocks/element/__link/element__link.css);
+@import url(../blocks/like/like.css);
+
+/* import footer */
+@import url(../blocks/footer/footer.css);
+@import url(../blocks/footer/__copyright/footer__copyright.css);
+
+
+.image-1 {
+  background-image: url(../images/element-1.jpg);
+}
+.image-2 {
+  background-image: url(../images/element-2.jpg);
+}
+.image-3 {
+  background-image: url(../images/element-3.jpg);
+}

@@ -1,0 +1,28 @@
+.profile__info-button {
+  position: absolute;
+  top: 15px;
+  right: -72px;
+  border: 1px solid #fff;
+  background-color: transparent;
+  width: 24px;
+  height: 24px;
+  background-image: url(../../../images/pencil.svg);
+  background-position: center;
+  background-repeat: no-repeat;
+  cursor: pointer;
+}
+
+@media (max-width: 700px) {
+  .profile__info-button {
+    right: -38px;
+  }
+}
+
+@media (max-width: 550px) {
+  .profile__info-button {
+    right: -28px;
+    top: 7px;
+    width: 18px;
+    height: 18px;
+  }
+}

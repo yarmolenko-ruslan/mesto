@@ -1,0 +1,16 @@
+.profile__info-text {
+  width: 293px;
+  padding-left: 31px;
+}
+
+@media (max-width: 700px) {
+  .profile__info-text {
+    padding-left: 0;
+  }
+}
+
+@media (max-width: 550px) {
+  .profile__info-text {
+    max-width: 189px;
+  }
+}
