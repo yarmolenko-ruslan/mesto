@@ -3,6 +3,7 @@
 @import url(../vendor/normalize.css);
 @import url(../fonts/fonts.css);
 @import url(../blocks/page/page.css);
+@import url(../blocks/page/_place/page_place_lock.css);
 @import url(../blocks/link/link.css);
 @import url(../blocks/content/content.css);
 
@@ -22,16 +23,16 @@
 @import url(../blocks/profile/__info-title/profile__info-title.css);
 @import url(../blocks/profile/__info/profile__info.css);
 
-/* import modal */
+/* import popup */
 
-@import url(../blocks/modal/modal.css);
-@import url(../blocks/modal/__form/modal__form.css);
-@import url(../blocks/modal/_condition/modal_condition_visible.css);
-@import url(../blocks/modal/__button/modal__button.css);
-@import url(../blocks/modal/__close/modal__close.css);
-@import url(../blocks/modal/__input/modal__input.css);
-@import url(../blocks/modal/__title/modal__title.css);
-@import url(../blocks/modal/__input/_place/modal__input_place_bottom.css);
+@import url(../blocks/popup/popup.css);
+@import url(../blocks/popup/__container/popup__container.css);
+@import url(../blocks/popup/_condition/popup_condition_visible.css);
+@import url(../blocks/popup/__button/popup__button.css);
+@import url(../blocks/popup/__close/popup__close.css);
+@import url(../blocks/popup/__input/popup__input.css);
+@import url(../blocks/popup/__title/popup__title.css);
+@import url(../blocks/popup/__input/_place/popup__input_place_bottom.css);
 
 /* import elements и element */
 

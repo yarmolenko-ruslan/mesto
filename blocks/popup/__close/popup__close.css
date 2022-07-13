@@ -1,4 +1,4 @@
-.modal__close {
+.popup__close {
   background-image: url(../../../images/close.svg);
   background-repeat: no-repeat;
   background-position: center;
@@ -10,4 +10,13 @@
   width: 32px;
   height: 32px;
   cursor: pointer;
+}
+
+@media (max-width: 550px) {
+  .popup__close {
+    top: -36px;
+    right: 0;
+    width: 20px;
+    height: 20px;
+  }
 }
