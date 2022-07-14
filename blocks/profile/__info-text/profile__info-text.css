@@ -1,6 +1,11 @@
 .profile__info-text {
   width: 293px;
   padding-left: 31px;
+  display: grid;
+  grid-template-columns: max-content max-content;
+    grid-template-areas:
+        "title title button"
+        "subtitle subtitle button";
 }
 
 @media (max-width: 700px) {
