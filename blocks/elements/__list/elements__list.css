@@ -11,6 +11,7 @@
 @media (max-width: 940px) {
   .elements__list {
     grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: auto;
   }
 }
 

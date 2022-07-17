@@ -1,11 +1,11 @@
-.element__link {
-  font-weight: 900;
-  max-width: 190px;
+.element__title {
   color: #000;
   font-size: 24px;
   line-height: 121%;
-  text-decoration: none;
+  font-weight: 900;
+  max-width: 185px;
   text-overflow: ellipsis;
   white-space: nowrap;
   overflow: hidden;
+  margin: 0;
 }
