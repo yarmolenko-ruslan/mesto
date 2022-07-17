@@ -3,6 +3,7 @@
   font-weight: 400;
   line-height: 121%;
   margin: 0;
+  max-width: 520px;
   width: 100%;
   grid-area: subtitle;
 }
@@ -16,5 +17,6 @@
 @media (max-width: 550px) {
   .profile__info-subtitle {
     font-size: 14px;
+    margin-bottom: 32px;
   }
 }
