@@ -5,7 +5,7 @@
   background-color: transparent;
   width: 22px;
   height: 19px;
-  border: none;
+  border: transparent;
   cursor: pointer;
   transition: opacity 0.5s;
 }
