@@ -21,34 +21,15 @@
     <section class="profile">
       <div class="profile__avatar"></div>
       <div class="profile__info">
-        <div class="profile__info-text">
-          <p class="profile__info-title">
-            Жак-Ив Кусто
-          </p>
-          <p class="profile__info-subtitle">
-            Исследователь океана
-          </p>
-          <button class="profile__info-button link" type="button"></button>
-        </div>
-
+        <h1 class="profile__info-title">
+          Жак-Ив Кусто
+        </h1>
+        <p class="profile__info-subtitle">
+          Исследователь океана
+        </p>
+        <button class="profile__info-button button" type="button"></button>
       </div>
-      <button class="profile__button link" type="button"></button>
-    </section>
-
-    <section class="popup">
-      <div class="popup__container">
-        <h2 class="popup__title">
-          Редактировать профиль
-        </h2>
-        <button class="popup__close link" type="button"></button>
-        <form class="popup__form">
-          <input class="popup__input popup__input_place_top" value="Жак-Ив Кусто" maxlength="20" type="text">
-          <input class="popup__input popup__input_place_bottom" value="Исследователь океана" maxlength="40" type="text">
-          <button class="popup__button" type="submit">
-            Сохранить
-          </button>
-        </form>
-      </div>
+      <button class="profile__button button" type="button"></button>
     </section>
 
     <div class="elements">
@@ -60,7 +41,7 @@
             <h2 class="element__title">
               Карачаевск
             </h2>
-            <button class="element__like" type="button"></button>
+            <button class="element__like button" type="button"></button>
           </div>
         </li>
 
@@ -70,7 +51,7 @@
             <h2 class="element__title">
               Гора Эльбрус
             </h2>
-            <button class="element__like" type="button"></button>
+            <button class="element__like button" type="button"></button>
           </div>
         </li>
 
@@ -80,7 +61,7 @@
             <h2 class="element__title">
               Домбай
             </h2>
-            <button class="element__like" type="button"></button>
+            <button class="element__like button" type="button"></button>
           </div>
         </li>
 
@@ -90,7 +71,7 @@
             <h2 class="element__title">
               Гора Эльбрус
             </h2>
-            <button class="element__like" type="button"></button>
+            <button class="element__like button" type="button"></button>
           </div>
         </li>
 
@@ -100,7 +81,7 @@
             <h2 class="element__title">
               Домбай
             </h2>
-            <button class="element__like" type="button"></button>
+            <button class="element__like button" type="button"></button>
           </div>
         </li>
 
@@ -110,7 +91,7 @@
             <h2 class="element__title">
               Карачаево-Черкессия
             </h2>
-            <button class="element__like" type="button"></button>
+            <button class="element__like button" type="button"></button>
           </div>
         </li>
 
@@ -124,6 +105,22 @@
       &#169; 2022 Mesto Russia
     </p>
   </footer>
+
+  <div class="popup">
+    <div class="popup__container">
+      <h2 class="popup__title">
+        Редактировать профиль
+      </h2>
+      <button class="popup__close button" type="button"></button>
+      <form class="popup__form">
+        <input class="popup__input popup__input_place_top" value="Жак-Ив Кусто" maxlength="20" type="text">
+        <input class="popup__input popup__input_place_bottom" value="Исследователь океана" maxlength="40" type="text">
+        <button class="popup__button button" type="submit">
+          Сохранить
+        </button>
+      </form>
+    </div>
+  </div>
 
   <script src="./script/script.js"></script>
 </body>

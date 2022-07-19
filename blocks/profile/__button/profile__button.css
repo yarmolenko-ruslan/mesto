@@ -18,3 +18,9 @@
     max-width: 282px;
   }
 }
+
+@media (max-width: 550px) {
+  .profile__button {
+    background-image: url(../../../images/plus-320.svg);
+  }
+}

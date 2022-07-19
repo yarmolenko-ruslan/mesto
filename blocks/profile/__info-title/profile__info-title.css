@@ -8,15 +8,30 @@
   max-width: 520px;
 }
 
+@media (max-width: 910px) {
+  .profile__info-title {
+    max-width: 300px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+  }
+}
+
 @media (max-width: 700px) {
-  .profile__info-title{
+  .profile__info-title {
     margin-bottom: 14px;
   }
 }
 
 @media (max-width: 550px) {
-  .profile__info-title{
+  .profile__info-title {
     font-size: 27px;
     margin-bottom: 9px;
+  }
+}
+
+@media (max-width: 400px) {
+  .profile__info-title {
+    max-width: 200px;
   }
 }

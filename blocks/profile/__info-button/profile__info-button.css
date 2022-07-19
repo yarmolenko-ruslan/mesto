@@ -11,18 +11,10 @@
   margin: 15px 0 0 19px;
 }
 
-@media (max-width: 700px) {
-  .profile__info-button {
-    right: -38px;
-  }
-}
-
 @media (max-width: 550px) {
   .profile__info-button {
-    right: -28px;
-    top: 7px;
+    margin: 7px 0 0 10px;
     width: 18px;
     height: 18px;
-    margin: 7px 0 0 10px;
   }
 }
