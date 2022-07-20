@@ -27,12 +27,12 @@
         <p class="profile__info-subtitle">
           Исследователь океана
         </p>
-        <button class="profile__info-button button" type="button"></button>
+        <button class="profile__info-button button" aria-label="Редактировать имя и информацию о себе" type="button"></button>
       </div>
-      <button class="profile__button button" type="button"></button>
+      <button class="profile__button button" aria-label="Добавить новую карточку места" type="button"></button>
     </section>
 
-    <div class="elements">
+    <section class="elements">
       <ul class="elements__list">
 
         <li class="element">
@@ -41,7 +41,7 @@
             <h2 class="element__title">
               Карачаевск
             </h2>
-            <button class="element__like button" type="button"></button>
+            <button class="element__like button" aria-label="Понравилось" type="button"></button>
           </div>
         </li>
 
@@ -51,7 +51,7 @@
             <h2 class="element__title">
               Гора Эльбрус
             </h2>
-            <button class="element__like button" type="button"></button>
+            <button class="element__like button" aria-label="Понравилось" type="button"></button>
           </div>
         </li>
 
@@ -61,7 +61,7 @@
             <h2 class="element__title">
               Домбай
             </h2>
-            <button class="element__like button" type="button"></button>
+            <button class="element__like button" aria-label="Понравилось" type="button"></button>
           </div>
         </li>
 
@@ -71,7 +71,7 @@
             <h2 class="element__title">
               Гора Эльбрус
             </h2>
-            <button class="element__like button" type="button"></button>
+            <button class="element__like button" aria-label="Понравилось" type="button"></button>
           </div>
         </li>
 
@@ -81,7 +81,7 @@
             <h2 class="element__title">
               Домбай
             </h2>
-            <button class="element__like button" type="button"></button>
+            <button class="element__like button" aria-label="Понравилось" type="button"></button>
           </div>
         </li>
 
@@ -91,18 +91,18 @@
             <h2 class="element__title">
               Карачаево-Черкессия
             </h2>
-            <button class="element__like button" type="button"></button>
+            <button class="element__like button" aria-label="Понравилось" type="button"></button>
           </div>
         </li>
 
       </ul>
-    </div>
+    </section>
 
   </main>
 
   <footer class="footer">
     <p class="footer__copyright">
-      &#169; 2022 Mesto Russia
+      &copy; 2022 Mesto Russia
     </p>
   </footer>
 
@@ -111,11 +111,11 @@
       <h2 class="popup__title">
         Редактировать профиль
       </h2>
-      <button class="popup__close button" type="button"></button>
-      <form class="popup__form">
-        <input class="popup__input popup__input_place_top" value="Жак-Ив Кусто" maxlength="20" type="text">
-        <input class="popup__input popup__input_place_bottom" value="Исследователь океана" maxlength="40" type="text">
-        <button class="popup__button button" type="submit">
+      <button class="popup__close button" aria-label="Закрыть" type="button"></button>
+      <form class="popup__form" name="popupForm">
+        <input class="popup__input popup__input_place_top"name="name" value="Жак-Ив Кусто" maxlength="20" type="text">
+        <input class="popup__input popup__input_place_bottom" name="job" value="Исследователь океана" maxlength="40" type="text">
+        <button class="popup__button button" aria-label="Сохранить" type="submit">
           Сохранить
         </button>
       </form>
