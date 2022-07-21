@@ -30,8 +30,14 @@
   }
 }
 
-@media (max-width: 400px) {
+@media (max-width: 430px) {
   .profile__info-title {
     max-width: 200px;
+  }
+}
+
+@media (max-width: 300px) {
+  .profile__info-title {
+    max-width: 130px;
   }
 }
