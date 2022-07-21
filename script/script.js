@@ -10,6 +10,9 @@ let infoSubtitle = document.querySelector('.profile__info-subtitle');
 
 function openModal() {
   modal.classList.add('popup_opened');
+  
+  nameInput.value = infoTitle.textContent;
+  jobInput.value = infoSubtitle.textContent;
 }
 
 function closeModal() {
@@ -21,9 +24,10 @@ function formSubmitHandler(evt) {
 
   infoTitle.textContent = `${nameInput.value}`;
   infoSubtitle.textContent = `${jobInput.value}`;
+
+  closeModal();
 }
 
 formElement.addEventListener('submit', formSubmitHandler);
-formElement.addEventListener('submit', closeModal);
 buttonModalOn.addEventListener("click", openModal);
 buttonModalOff.addEventListener('click', closeModal);

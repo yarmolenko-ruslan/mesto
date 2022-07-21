@@ -8,7 +8,7 @@
   grid-area: subtitle;
 }
 
-@media (max-width: 910px) {
+@media (max-width: 940px) {
   .profile__info-subtitle {
     max-width: 300px;
     text-overflow: ellipsis;
