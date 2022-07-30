@@ -43,6 +43,7 @@ const selectors = {
   template: '#element-container',
   cardTitle: '.element__title',
   cardImg: '.element__image',
+  buttonDel: '.element__trash-btn'
 }
 
 // Ищем основные переменные для открытия popup
@@ -105,6 +106,12 @@ function createCard(link, name) {
 const cardElement = template.cloneNode(true);
 const cardTitle = cardElement.querySelector(selectors.cardTitle);
 const cardImg = cardElement.querySelector(selectors.cardImg);
+const buttonDel = cardElement.querySelector(selectors.buttonDel);
+
+buttonDel.addEventListener('click', function() {
+  cardElement.remove();
+});
+
 cardTitle.textContent = name;
 cardImg.src = link;
 
