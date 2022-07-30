@@ -32,7 +32,7 @@
     <section class="elements">
       <ul class="elements__list">
 
-        <li class="element">
+        <!--<li class="element">
           <img src="./images/element-1.jpg" alt="Старое и заброшенное здание" class="element__image">
           <button class="element__trash-btn button"></button>
           <div class="element__info">
@@ -96,7 +96,7 @@
             </h2>
             <button class="element__like button" aria-label="Понравилось" type="button"></button>
           </div>
-        </li>
+        </li> -->
 
       </ul>
     </section>
@@ -133,8 +133,10 @@
       </h2>
       <button class="popup__close popup-card__close button" aria-label="Закрыть" type="button"></button>
       <form class="popup__form popup-card__form" name="popupForm">
-        <input class="popup__input" name="title" maxlength="20" placeholder="Название" type="text">
-        <input class="popup__input" name="link" placeholder="Ссылка на картинку" type="text">
+        <input class="popup__input popup__input_place_top" name="title" maxlength="20" placeholder="Название"
+          type="text" required>
+        <input class="popup__input popup__input_place_bottom" name="link" placeholder="Ссылка на картинку" type="text"
+          required>
         <button class="popup__button button" aria-label="Сохранить" type="submit">
           Создать
         </button>
@@ -142,7 +144,19 @@
     </div>
   </div>
 
-  <script src="./script/script.js"></script>
+  <template id="element-container">
+    <li class="element">
+      <img class="element__image">
+      <button class="element__trash-btn button"></button>
+      <div class="element__info">
+        <h2 class="element__title"></h2>
+        <button class="element__like button" type="button"></button>
+      </div>
+    </li>
+  </template>
+
+
+  <script src="./script/script.js" defer></script>
 </body>
 
 </html>
