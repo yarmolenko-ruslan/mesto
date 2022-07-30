@@ -34,6 +34,7 @@
 
         <li class="element">
           <img src="./images/element-1.jpg" alt="Старое и заброшенное здание" class="element__image">
+          <button class="element__trash-btn button"></button>
           <div class="element__info">
             <h2 class="element__title">
               Карачаевск
@@ -44,6 +45,7 @@
 
         <li class="element">
           <img src="./images/element-2.jpg" alt="Холмы на закате солнца" class="element__image">
+          <button class="element__trash-btn button"></button>
           <div class="element__info">
             <h2 class="element__title">
               Гора Эльбрус
@@ -54,6 +56,7 @@
 
         <li class="element">
           <img src="./images/element-3.jpg" alt="Величественные горы" class="element__image">
+          <button class="element__trash-btn button"></button>
           <div class="element__info">
             <h2 class="element__title">
               Домбай
@@ -64,6 +67,7 @@
 
         <li class="element">
           <img src="./images/element-2.jpg" alt="Холмы на закате солнца" class="element__image">
+          <button class="element__trash-btn button"></button>
           <div class="element__info">
             <h2 class="element__title">
               Гора Эльбрус
@@ -74,6 +78,7 @@
 
         <li class="element">
           <img src="./images/element-3.jpg" alt="Величественные горы" class="element__image">
+          <button class="element__trash-btn button"></button>
           <div class="element__info">
             <h2 class="element__title">
               Домбай
@@ -84,6 +89,7 @@
 
         <li class="element">
           <img src="./images/element-1.jpg" alt="Старое и заброшенное здание" class="element__image">
+          <button class="element__trash-btn button"></button>
           <div class="element__info">
             <h2 class="element__title">
               Карачаево-Черкессия
@@ -103,18 +109,34 @@
     </p>
   </footer>
 
-  <div class="popup">
+  <div class="popup popup-rename">
     <div class="popup__container">
       <h2 class="popup__title">
         Редактировать профиль
       </h2>
-      <button class="popup__close button" aria-label="Закрыть" type="button"></button>
-      <form class="popup__form" name="popupForm">
+      <button class="popup__close popup-rename__close button" aria-label="Закрыть" type="button"></button>
+      <form class="popup__form popup-rename__form" name="popupForm">
         <input class="popup__input popup__input_place_top" name="name" value="Жак-Ив Кусто" maxlength="20" type="text">
         <input class="popup__input popup__input_place_bottom" name="job" value="Исследователь океана" maxlength="40"
           type="text">
         <button class="popup__button button" aria-label="Сохранить" type="submit">
           Сохранить
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <div class="popup popup-card">
+    <div class="popup__container">
+      <h2 class="popup__title">
+        Новое место
+      </h2>
+      <button class="popup__close popup-card__close button" aria-label="Закрыть" type="button"></button>
+      <form class="popup__form popup-card__form" name="popupForm">
+        <input class="popup__input" name="title" maxlength="20" placeholder="Название" type="text">
+        <input class="popup__input" name="link" placeholder="Ссылка на картинку" type="text">
+        <button class="popup__button button" aria-label="Сохранить" type="submit">
+          Создать
         </button>
       </form>
     </div>

@@ -1,12 +1,8 @@
 .profile__info-button {
   border: 1px solid #fff;
-  background-color: transparent;
   width: 24px;
   height: 24px;
   background-image: url(../../../images/pencil.svg);
-  background-position: center;
-  background-repeat: no-repeat;
-  cursor: pointer;
   grid-area: button;
   margin: 15px 0 0 19px;
 }
