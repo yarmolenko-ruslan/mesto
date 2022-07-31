@@ -43,7 +43,11 @@ const selectors = {
   template: '#element-container',
   cardTitle: '.element__title',
   cardImg: '.element__image',
-  buttonDel: '.element__trash-btn'
+  buttonDel: '.element__trash-btn',
+  modalImage: '.popup-image',
+  modalImageClose: '.popup-image__close',
+  modalImageImg: '.popup-image__img',
+  modalImageTitle: '.popup-image__title'
 }
 
 // Ищем основные переменные для открытия popup
@@ -99,6 +103,8 @@ buttonModalOff.addEventListener('click', closeModal);
 openCardBtn.addEventListener('click', openCard);
 closeCardBtn.addEventListener('click', closeCard);
 
+
+
 const list = document.querySelector(selectors.list);
 
 function createCard(link, name) {
@@ -114,6 +120,7 @@ buttonDel.addEventListener('click', function() {
 
 cardTitle.textContent = name;
 cardImg.src = link;
+cardImg.alt = name;
 
 list.prepend(cardElement);
 };
@@ -134,3 +141,33 @@ function addEventListener() {
 
 addEventListener();
 createInitialCard();
+
+const allLinks = document.querySelectorAll(selectors.cardImg);
+const popupImage = document.querySelector(selectors.modalImage);
+const popapImageClose = document.querySelector(selectors.modalImageClose);
+const modalImageImg = document.querySelector(selectors.modalImageImg);
+const modalImageTitle = document.querySelector(selectors.modalImageTitle);
+
+function closeImage() {
+  popupImage.classList.remove('popup_opened');
+}
+
+popapImageClose.addEventListener('click', closeImage);
+
+
+
+allLinks.forEach(function(el) {
+
+
+  el.addEventListener('click', function(e){
+
+    popupImage.classList.add('popup_opened');
+  const a = e.target.getAttribute('src');
+  const b = e.target.getAttribute('alt');
+
+  modalImageImg.src = a;
+  modalImageTitle.textContent = b;
+  });
+});
+
+
