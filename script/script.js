@@ -169,10 +169,10 @@ createInitialCard(); // вызываем функцию для заполнен�
     });
   });
 
-  // закрываем модальное окно с картинкой
-  function closeImage() {
-    popupImage.classList.remove('popup_opened');
-  }
+// закрываем модальное окно с картинкой
+function closeImage() {
+  popupImage.classList.remove('popup_opened');
+}
 
 formElement.addEventListener('submit', formSubmitHandler); // следим за нажатием кнопки "сохранить"
 buttonModalOn.addEventListener("click", openModal); // следим за нажатие кнопки открытия попапа
