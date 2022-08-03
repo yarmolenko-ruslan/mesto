@@ -41,13 +41,13 @@
     </p>
   </footer>
 
-  <div class="popup popup-rename">
+  <div class="popup popup-profile">
     <div class="popup__container">
       <h2 class="popup__title">
         Редактировать профиль
       </h2>
-      <button class="popup__close popup-rename__close button" aria-label="Закрыть" type="button"></button>
-      <form class="popup__form popup-rename__form" name="popupForm">
+      <button class="popup__close popup-profile__close button" aria-label="Закрыть" type="button"></button>
+      <form class="popup__form popup-profile__form" name="popupForm">
         <input class="popup__input popup__input_place_top" name="name" value="Жак-Ив Кусто" maxlength="20" type="text">
         <input class="popup__input popup__input_place_bottom" name="job" value="Исследователь океана" maxlength="40"
           type="text">
@@ -65,10 +65,8 @@
       </h2>
       <button class="popup__close popup-card__close button" aria-label="Закрыть" type="button"></button>
       <form class="popup__form popup-card__form" name="popupForm">
-        <input class="popup__input popup__input_place_top" name="title" maxlength="20" placeholder="Название"
-          type="text" required>
-        <input class="popup__input popup__input_place_bottom" name="link" placeholder="Ссылка на картинку" type="text"
-          required>
+        <input class="popup__input popup__input_place_top" name="title" maxlength="20" placeholder="Название" type="text" required>
+        <input class="popup__input popup__input_place_bottom" name="link" placeholder="Ссылка на картинку" type="url" required>
         <button class="popup__button button" aria-label="Сохранить" type="submit">
           Создать
         </button>
@@ -79,14 +77,14 @@
   <div class="popup popup-image">
     <div class="popup-image__container">
       <button class="popup-image__close button"></button>
-      <img class="popup-image__img" src="#" alt="#">
+      <img class="popup-image__img" src="" alt="">
       <p class="popup-image__title"></p>
     </div>
   </div>
 
   <template id="element-container">
     <li class="element">
-      <img class="element__image" src="#" alt="#">
+      <img class="element__image" src="" alt="">
       <button class="element__trash-btn button"></button>
       <div class="element__info">
         <h2 class="element__title"></h2>
@@ -95,7 +93,7 @@
     </li>
   </template>
 
-  <script src="./script/script.js"></script>
+  <script src="./script/script.js" defer></script>
 </body>
 
 </html>
