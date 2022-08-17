@@ -151,7 +151,7 @@ function addCardImageClickListener(item) {
     });
 };
 
-function addListenerLikeCard(item) {
+function addLikeCardListener(item) {
     item.addEventListener('click', function(e) {
         e.target.classList.toggle('element__like_active');
     });
