@@ -79,6 +79,7 @@ const popups = document.querySelectorAll(selectors.popup);
 const modalImageImg = document.querySelector(selectors.modalImageImg);
 const modalImageTitle = document.querySelector(selectors.modalImageTitle);
 const list = document.querySelector(selectors.list);
+const keyEsc = 27;
 
 function fillProfilePopupFields() {
   nameInput.value = infoTitle.textContent;
@@ -127,18 +128,21 @@ function closePopup(item) {
 
 openModalProfileBtn.addEventListener("click", function () {
   openPopup(modalProfile);
-
   fillProfilePopupFields();
 });
+
 openModalCardBtn.addEventListener("click", function () {
   openPopup(modalCard);
 });
+
 closeModalProfileBtn.addEventListener("click", function () {
   closePopup(modalProfile);
 });
+
 closeModalCardBtn.addEventListener("click", function () {
   closePopup(modalCard);
 });
+
 closeModalImageBtn.addEventListener("click", function () {
   closePopup(modalImage);
 });
@@ -197,3 +201,16 @@ popups.forEach(function (popup) {
     }
   });
 });
+
+document.addEventListener("keydown", function (key) {
+  closePopupClickBtn(key);
+});
+
+function closePopupClickBtn(evt) {
+  if (evt.which === keyEsc) {
+    const openedPopup = document.querySelectorAll(".popup.popup_opened");
+    openedPopup.forEach(function (e) {
+      closePopup(e);
+    });
+  }
+}
