@@ -27,16 +27,17 @@ const initialCards = [
 
 const selectors = {
   modalProfile: ".popup-profile",
-  closeModalProfileBtn: ".popup-profile__close",
-  openModalProfileBtn: ".profile__info-button",
+  btnCloseModalProfile: ".popup-profile__close",
+  btnOpenModalProfile: ".profile__info-button",
   form: ".popup-profile__form",
   nameInput: ".popup__input_place_top",
   jobInput: ".popup__input_place_bottom",
   title: ".profile__info-title",
   subtitle: ".profile__info-subtitle",
   modalCard: ".popup-card",
-  closeModalCardBtn: ".popup-card__close",
-  openModalCardBtn: ".profile__button",
+  btnSubmitPopupCard: ".popup__button",
+  btnCloseModalCard: ".popup-card__close",
+  btnOpenModalCard: ".profile__button",
   formCard: ".popup-card__form",
   list: ".elements__list",
   templateCard: "#element-container",
@@ -45,7 +46,7 @@ const selectors = {
   cardImage: ".element__image",
   buttonDel: ".element__trash-btn",
   modalImage: ".popup-image",
-  closeModalImageBtn: ".popup-image__close",
+  btnCloseModalImage: ".popup-image__close",
   modalImageImg: ".popup-image__img",
   modalImageTitle: ".popup-image__title",
   elementLike: ".element__like",
@@ -53,27 +54,27 @@ const selectors = {
 };
 
 const modalProfile = document.querySelector(selectors.modalProfile);
-const formElement = modalProfile.querySelector(selectors.form);
+const formProfileElement = modalProfile.querySelector(selectors.form);
 const nameInput = modalProfile.querySelector(selectors.nameInput);
 const jobInput = modalProfile.querySelector(selectors.jobInput);
-const closeModalProfileBtn = modalProfile.querySelector(
-  selectors.closeModalProfileBtn
+const btnCloseModalProfile = modalProfile.querySelector(
+  selectors.btnCloseModalProfile
 );
-const openModalProfileBtn = document.querySelector(
-  selectors.openModalProfileBtn
+const btnOpenModalProfile = document.querySelector(
+  selectors.btnOpenModalProfile
 );
 const infoTitle = document.querySelector(selectors.title);
 const infoSubtitle = document.querySelector(selectors.subtitle);
 const modalCard = document.querySelector(selectors.modalCard);
-const closeModalCardBtn = modalCard.querySelector(selectors.closeModalCardBtn);
-const openModalCardBtn = document.querySelector(selectors.openModalCardBtn);
+const btnCloseModalCard = modalCard.querySelector(selectors.btnCloseModalCard);
+const btnOpenModalCard = document.querySelector(selectors.btnOpenModalCard);
 const formCard = modalCard.querySelector(selectors.formCard);
 const inputCardTitle = modalCard.querySelector(selectors.nameInput);
 const inputCardLink = modalCard.querySelector(selectors.jobInput);
 const templateCard = document
   .querySelector(selectors.templateCard)
   .content.querySelector(selectors.templateElement);
-const closeModalImageBtn = document.querySelector(selectors.closeModalImageBtn);
+const btnCloseModalImage = document.querySelector(selectors.btnCloseModalImage);
 const modalImage = document.querySelector(selectors.modalImage);
 const popups = document.querySelectorAll(selectors.popup);
 const modalImageImg = document.querySelector(selectors.modalImageImg);
@@ -112,38 +113,46 @@ initialCards.forEach(function (element) {
   list.prepend(elementTemplateCard);
 });
 
-function openPopup(openBtnModal, modal) {
-  openBtnModal.addEventListener("click", function () {
-    modal.classList.add("popup_opened");
-  });
+function closePopupClickBtn(evt) {
+  if (evt.which === keyEsc) {
+    const openedPopup = document.querySelectorAll(".popup_opened");
+    openedPopup.forEach(function (e) {
+      closePopup(e);
+    });
+  }
 }
 
 function openPopup(item) {
   item.classList.add("popup_opened");
+
+  document.addEventListener("keydown", closePopupClickBtn);
 }
 
 function closePopup(item) {
   item.classList.remove("popup_opened");
+
+  document.removeEventListener("keydown", closePopupClickBtn);
 }
 
-openModalProfileBtn.addEventListener("click", function () {
+btnOpenModalProfile.addEventListener("click", function () {
   openPopup(modalProfile);
+
   fillProfilePopupFields();
 });
 
-openModalCardBtn.addEventListener("click", function () {
+btnOpenModalCard.addEventListener("click", function () {
   openPopup(modalCard);
 });
 
-closeModalProfileBtn.addEventListener("click", function () {
+btnCloseModalProfile.addEventListener("click", function () {
   closePopup(modalProfile);
 });
 
-closeModalCardBtn.addEventListener("click", function () {
+btnCloseModalCard.addEventListener("click", function () {
   closePopup(modalCard);
 });
 
-closeModalImageBtn.addEventListener("click", function () {
+btnCloseModalImage.addEventListener("click", function () {
   closePopup(modalImage);
 });
 
@@ -154,9 +163,8 @@ function addCardImageClickListener(item) {
 
     modalImageImg.src = imageSrc;
     modalImageTitle.textContent = imageAlt;
-  });
+    modalImageImg.alt = imageAlt;
 
-  item.addEventListener("click", function () {
     openPopup(modalImage);
   });
 }
@@ -180,9 +188,18 @@ function addSubmitListeners() {
     list.prepend(newCard);
 
     closePopup(modalCard);
+
+    inputCardTitle.value = "";
+    inputCardLink.value = "";
+
+    const btnSubmitPopupCard = formCard.querySelector(
+      selectors.btnSubmitPopupCard
+    );
+    btnSubmitPopupCard.setAttribute("disabled", "disabled");
+    btnSubmitPopupCard.classList.add("popup__button_disabled");
   });
 
-  formElement.addEventListener("submit", function (evt) {
+  formProfileElement.addEventListener("submit", function (evt) {
     evt.preventDefault();
 
     infoTitle.textContent = nameInput.value;
@@ -201,16 +218,3 @@ popups.forEach(function (popup) {
     }
   });
 });
-
-document.addEventListener("keydown", function (key) {
-  closePopupClickBtn(key);
-});
-
-function closePopupClickBtn(evt) {
-  if (evt.which === keyEsc) {
-    const openedPopup = document.querySelectorAll(".popup.popup_opened");
-    openedPopup.forEach(function (e) {
-      closePopup(e);
-    });
-  }
-}
