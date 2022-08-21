@@ -115,10 +115,9 @@ initialCards.forEach(function (element) {
 
 function closePopupClickBtn(evt) {
   if (evt.which === keyEsc) {
-    const openedPopup = document.querySelectorAll(".popup_opened");
-    openedPopup.forEach(function (e) {
-      closePopup(e);
-    });
+    const openedPopup = document.querySelector(".popup_opened");
+    
+    closePopup(openedPopup);
   }
 }
 
