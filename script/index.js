@@ -1,27 +1,29 @@
+import { Card } from "./cards.js";
+
 const initialCards = [
   {
-    name: "Архыз",
-    link: "https://pictures.s3.yandex.net/frontend-developer/cards-compressed/arkhyz.jpg",
+    name: "г. Енисейск",
+    link: "https://i.mycdn.me/i?r=AzEPZsRbOZEKgBhR0XGMT1RkNfX9rH8ci_0njmiJM-2H7qaKTM5SRkZCeTgDn6uOyic",
   },
   {
-    name: "Челябинская область",
-    link: "https://pictures.s3.yandex.net/frontend-developer/cards-compressed/chelyabinsk-oblast.jpg",
+    name: "Тунгусский заповедник",
+    link: "https://korona-severa.ru/wp-content/uploads/2/9/b/29b8b3b30338cbe7b817c399094e7fbc.jpeg",
   },
   {
-    name: "Иваново",
-    link: "https://pictures.s3.yandex.net/frontend-developer/cards-compressed/ivanovo.jpg",
+    name: "Саяно-Шушенская ГЭС",
+    link: "https://architectureguru.ru/wp-content/uploads/2019/04/sayano-shushenskaya-hydroelectric-8.jpg",
   },
   {
-    name: "Камчатка",
-    link: "https://pictures.s3.yandex.net/frontend-developer/cards-compressed/kamchatka.jpg",
+    name: "Красноярские стобы",
+    link: "https://i10.fotocdn.net/s105/b0d186ca65791a06/public_pin_l/2249547891.jpg",
   },
   {
-    name: "Холмогорский район",
-    link: "https://pictures.s3.yandex.net/frontend-developer/cards-compressed/kholmogorsky-rayon.jpg",
+    name: "Ергаки",
+    link: "http://f1.lpcdn.site/9788aa37e0a756529d272ad54a116fb1/e1833a49eb6a76e4563417b77903efc9.jpg",
   },
   {
-    name: "Байкал",
-    link: "https://pictures.s3.yandex.net/frontend-developer/cards-compressed/baikal.jpg",
+    name: "Дивногорск",
+    link: "https://visitsiberia.info/assets/cache_image/assets/manager/%D0%A7%D1%82%D0%BE%20%D0%BF%D0%BE%D1%81%D0%BC%D0%BE%D1%82%D1%80%D0%B5%D1%82%D1%8C/%D0%BA%D1%80%D0%B0%D0%B9%20%D0%B2%D0%BF%D0%B5%D1%87%D0%B0%D1%82%D0%BB%D1%8F%D0%B9/divnogorskaya_1200x630_267.jpg",
   },
 ];
 
@@ -40,8 +42,6 @@ const selectors = {
   btnOpenModalCard: ".profile__button",
   formCard: ".popup-card__form",
   list: ".elements__list",
-  templateCard: "#element-container",
-  templateElement: ".element",
   cardTitle: ".element__title",
   cardImage: ".element__image",
   buttonDel: ".element__trash-btn",
@@ -50,15 +50,19 @@ const selectors = {
   modalImageImg: ".popup-image__img",
   modalImageTitle: ".popup-image__title",
   elementLike: ".element__like",
-  popup: ".popup",
+  popup: ".popup"
 };
 
 const modalProfile = document.querySelector(selectors.modalProfile);
 const formProfileElement = modalProfile.querySelector(selectors.form);
 const nameInput = modalProfile.querySelector(selectors.nameInput);
 const jobInput = modalProfile.querySelector(selectors.jobInput);
-const btnCloseModalProfile = modalProfile.querySelector(selectors.btnCloseModalProfile);
-const btnOpenModalProfile = document.querySelector(selectors.btnOpenModalProfile);
+const btnCloseModalProfile = modalProfile.querySelector(
+  selectors.btnCloseModalProfile
+);
+const btnOpenModalProfile = document.querySelector(
+  selectors.btnOpenModalProfile
+);
 const infoTitle = document.querySelector(selectors.title);
 const infoSubtitle = document.querySelector(selectors.subtitle);
 const modalCard = document.querySelector(selectors.modalCard);
@@ -67,7 +71,7 @@ const btnOpenModalCard = document.querySelector(selectors.btnOpenModalCard);
 const formCard = modalCard.querySelector(selectors.formCard);
 const inputCardTitle = modalCard.querySelector(selectors.nameInput);
 const inputCardLink = modalCard.querySelector(selectors.jobInput);
-const templateCard = document.querySelector(selectors.templateCard).content.querySelector(selectors.templateElement);
+// const templateCard = document.querySelector(selectors.templateCard).content.querySelector(selectors.templateElement);
 const btnCloseModalImage = document.querySelector(selectors.btnCloseModalImage);
 const modalImage = document.querySelector(selectors.modalImage);
 const popups = document.querySelectorAll(selectors.popup);
@@ -81,29 +85,30 @@ function fillProfilePopupFields() {
   jobInput.value = infoSubtitle.textContent;
 }
 
-function createCard(element) {
-  const cardElement = templateCard.cloneNode(true);
-  const elementLike = cardElement.querySelector(selectors.elementLike);
-  const cardTitle = cardElement.querySelector(selectors.cardTitle);
-  const cardImage = cardElement.querySelector(selectors.cardImage);
-  const buttonDel = cardElement.querySelector(selectors.buttonDel);
+// function createCard(element) {
+//   const cardElement = templateCard.cloneNode(true);
+//   const elementLike = cardElement.querySelector(selectors.elementLike);
+//   const cardTitle = cardElement.querySelector(selectors.cardTitle);
+//   const cardImage = cardElement.querySelector(selectors.cardImage);
+//   const buttonDel = cardElement.querySelector(selectors.buttonDel);
 
-  buttonDel.addEventListener("click", function () {
-    cardElement.remove();
-  });
+//   buttonDel.addEventListener("click", function () {
+//     cardElement.remove();
+//   });
 
-  cardImage.src = element.link;
-  cardImage.alt = element.name;
-  cardTitle.textContent = element.name;
+//   cardImage.src = element.link;
+//   cardImage.alt = element.name;
+//   cardTitle.textContent = element.name;
 
-  addCardImageClickListener(cardImage);
-  addLikeCardListener(elementLike);
+//   addCardImageClickListener(cardImage);
+//   addLikeCardListener(elementLike);
 
-  return cardElement;
-}
+//   return cardElement;
+// }
 
 initialCards.forEach(function (element) {
-  const elementTemplateCard = createCard(element);
+  const itemCard = new Card(element, selectors);
+  const elementTemplateCard = itemCard.createCard();
   list.prepend(elementTemplateCard);
 });
 
@@ -120,7 +125,7 @@ function openPopup(item) {
 
   document.addEventListener("keydown", closePopupClickBtn);
 }
-  
+
 function closePopup(item) {
   item.classList.remove("popup_opened");
 
@@ -162,11 +167,11 @@ function addCardImageClickListener(item) {
   });
 }
 
-function addLikeCardListener(item) {
-  item.addEventListener("click", function (e) {
-    e.target.classList.toggle("element__like_active");
-  });
-}
+// function addLikeCardListener(item) {
+//   item.addEventListener("click", function (e) {
+//     e.target.classList.toggle("element__like_active");
+//   });
+// }
 
 function addSubmitListeners() {
   formCard.addEventListener("submit", function (evt) {
