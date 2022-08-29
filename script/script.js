@@ -57,12 +57,8 @@ const modalProfile = document.querySelector(selectors.modalProfile);
 const formProfileElement = modalProfile.querySelector(selectors.form);
 const nameInput = modalProfile.querySelector(selectors.nameInput);
 const jobInput = modalProfile.querySelector(selectors.jobInput);
-const btnCloseModalProfile = modalProfile.querySelector(
-  selectors.btnCloseModalProfile
-);
-const btnOpenModalProfile = document.querySelector(
-  selectors.btnOpenModalProfile
-);
+const btnCloseModalProfile = modalProfile.querySelector(selectors.btnCloseModalProfile);
+const btnOpenModalProfile = document.querySelector(selectors.btnOpenModalProfile);
 const infoTitle = document.querySelector(selectors.title);
 const infoSubtitle = document.querySelector(selectors.subtitle);
 const modalCard = document.querySelector(selectors.modalCard);
@@ -71,9 +67,7 @@ const btnOpenModalCard = document.querySelector(selectors.btnOpenModalCard);
 const formCard = modalCard.querySelector(selectors.formCard);
 const inputCardTitle = modalCard.querySelector(selectors.nameInput);
 const inputCardLink = modalCard.querySelector(selectors.jobInput);
-const templateCard = document
-  .querySelector(selectors.templateCard)
-  .content.querySelector(selectors.templateElement);
+const templateCard = document.querySelector(selectors.templateCard).content.querySelector(selectors.templateElement);
 const btnCloseModalImage = document.querySelector(selectors.btnCloseModalImage);
 const modalImage = document.querySelector(selectors.modalImage);
 const popups = document.querySelectorAll(selectors.popup);
@@ -116,7 +110,7 @@ initialCards.forEach(function (element) {
 function closePopupClickBtn(evt) {
   if (evt.which === keyEsc) {
     const openedPopup = document.querySelector(".popup_opened");
-    
+
     closePopup(openedPopup);
   }
 }
@@ -126,7 +120,7 @@ function openPopup(item) {
 
   document.addEventListener("keydown", closePopupClickBtn);
 }
-
+  
 function closePopup(item) {
   item.classList.remove("popup_opened");
 
