@@ -58,12 +58,8 @@ const modalProfile = document.querySelector(selectors.modalProfile);
 const formProfileElement = modalProfile.querySelector(selectors.form);
 const nameInput = modalProfile.querySelector(selectors.nameInput);
 const jobInput = modalProfile.querySelector(selectors.jobInput);
-const btnCloseModalProfile = modalProfile.querySelector(
-  selectors.btnCloseModalProfile
-);
-const btnOpenModalProfile = document.querySelector(
-  selectors.btnOpenModalProfile
-);
+const btnCloseModalProfile = modalProfile.querySelector(selectors.btnCloseModalProfile);
+const btnOpenModalProfile = document.querySelector(selectors.btnOpenModalProfile);
 const infoTitle = document.querySelector(selectors.title);
 const infoSubtitle = document.querySelector(selectors.subtitle);
 const modalCard = document.querySelector(selectors.modalCard);
@@ -75,8 +71,6 @@ const inputCardLink = modalCard.querySelector(selectors.jobInput);
 const btnCloseModalImage = document.querySelector(selectors.btnCloseModalImage);
 const modalImage = document.querySelector(selectors.modalImage);
 const popups = document.querySelectorAll(selectors.popup);
-const modalImageImg = document.querySelector(selectors.modalImageImg);
-const modalImageTitle = document.querySelector(selectors.modalImageTitle);
 const list = document.querySelector(selectors.list);
 const keyEsc = 27;
 
