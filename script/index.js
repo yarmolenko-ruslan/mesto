@@ -45,6 +45,8 @@ const btnCloseModalImage = document.querySelector(selectors.btnCloseModalImage);
 const modalImage = document.querySelector(selectors.modalImage);
 const popups = document.querySelectorAll(selectors.popup);
 const templateList = document.querySelector(selectors.templateList);
+const modalImageImg = document.querySelector(selectors.modalImageImg);
+const modalImageTitle = document.querySelector(selectors.modalImageTitle);
 const keyEsc = 27;
 
 function fillProfilePopupFields() {
@@ -102,6 +104,19 @@ btnCloseModalCard.addEventListener("click", function () {
 btnCloseModalImage.addEventListener("click", function () {
   closePopup(modalImage);
 });
+
+export function addCardImageClickListener(item) {
+  item.addEventListener("click", function (image) {
+    const imageSrc = image.target.getAttribute("src");
+    const imageAlt = image.target.getAttribute("alt");
+
+    modalImageImg.src = imageSrc;
+    modalImageTitle.textContent = imageAlt;
+    modalImageImg.alt = imageAlt;
+
+    openPopup(modalImage);
+  });
+}
 
 function addSubmitListeners() {
   formCard.addEventListener("submit", function (evt) {
