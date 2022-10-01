@@ -9,12 +9,12 @@ export class UserInfo {
   getUserInfo() {
     const textName = this._itemName.textContent;
     const textJob = this._itemJob.textContent;
-    const objectUserInfo = {
+    const userInfo = {
       name: textName,
       job: textJob,
     };
 
-    return objectUserInfo;
+    return userInfo;
   }
 
   setUserInfo({ newItemName, newItemJob }) {
