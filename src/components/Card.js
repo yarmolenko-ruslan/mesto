@@ -4,7 +4,6 @@ export class Card {
     this._link = link;
     this._handleCardClick = handleCardClick;
     this.selectorTemplate = selectorTemplate;
-    this.popupImage = document.querySelector(".popup-card");
   }
 
   renderElement() {
