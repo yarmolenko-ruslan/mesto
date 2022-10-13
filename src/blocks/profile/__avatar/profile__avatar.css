@@ -3,9 +3,45 @@
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+  border-radius: 50%;
   display: block;
   width: 120px;
   height: 120px;
+  position: relative;
+  cursor: pointer;
+}
+
+.profile__avatar::before {
+  background-color: #000;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.profile__avatar::after {
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  background-image: url(../../../images/pan.svg);
+  width: 26px;
+  height: 26px;
+}
+
+.profile__avatar::after,
+.profile__avatar::before {
+  content: "";
+  position: absolute;
+  opacity: 0;
+  transition: opacity 0.5s;
+}
+
+.profile__avatar:hover::before {
+  opacity: 0.8;
+}
+
+.profile__avatar:hover::after {
+  opacity: 1;
 }
 
 @media (max-width: 700px) {
@@ -16,6 +52,6 @@
 
 @media (max-width: 550px) {
   .profile__avatar {
-   margin-bottom: 28px;
+    margin-bottom: 28px;
   }
 }

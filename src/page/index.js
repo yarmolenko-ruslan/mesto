@@ -4,7 +4,7 @@ import { UserInfo } from "../components/UserInfo.js";
 import { PopupWithForm } from "../components/PopupWithForm.js";
 import { PopupWithImage } from "../components/PopupWithImage.js";
 import { Section } from "../components/Section.js";
-import { btnEditProfile } from "../utils/constants.js";
+import { btnEditProfile, profileAvatar } from "../utils/constants.js";
 import { btnAddCard } from "../utils/constants.js";
 import { elements } from "../utils/elements.js";
 import { validationConfig } from "../utils/constants.js";
@@ -22,7 +22,7 @@ function submitPopupProfile(inputValues) {
 }
 
 const popupEditUserInfo = new PopupWithForm(
-  ".popup-profile",
+  ".popup__profile",
   submitPopupProfile
 );
 popupEditUserInfo.setEventListeners();
@@ -36,6 +36,18 @@ btnEditProfile.addEventListener("click", function () {
   formPersonValidator.toggleButtonState();
   popupEditUserInfo.open();
 });
+
+const popupEditProfilePhoto = new PopupWithForm(
+  ".popup__profile-change", changeAvatar);
+popupEditProfilePhoto.setEventListeners();
+
+profileAvatar.addEventListener("click", function(){
+  popupEditProfilePhoto.open();
+});
+
+function changeAvatar() {
+  profileAvatar.style.backgroundImage = validationConfig.inputSelector.value;
+}
 
 const popupWithImage = new PopupWithImage(".popup-image");
 popupWithImage.setEventListeners();
@@ -65,7 +77,7 @@ function submitNewLocation(inputValues) {
   section.addItem(card);
 }
 
-const popupCard = new PopupWithForm(".popup-card", submitNewLocation);
+const popupCard = new PopupWithForm(".popup__card", submitNewLocation);
 popupCard.setEventListeners();
 
 btnAddCard.addEventListener("click", function () {

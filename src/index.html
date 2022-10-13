@@ -2,7 +2,10 @@
 <html lang="ru">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0" />
+    <meta
+      name="viewport"
+      content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
+    />
     <title>Mesto</title>
   </head>
 
@@ -39,7 +42,7 @@
       <p class="footer__copyright">&copy; 2022 Mesto Russia</p>
     </footer>
 
-    <div class="popup popup-profile">
+    <div class="popup popup__profile">
       <div class="popup__container">
         <h2 class="popup__title">Редактировать профиль</h2>
         <button
@@ -62,7 +65,10 @@
             type="text"
             required
           />
-          <span class="popup__input-error input-name-error" id="userNameError"></span>
+          <span
+            class="popup__input-error input-name-error"
+            id="userNameError"
+          ></span>
           <input
             class="popup__input popup__input_place_bottom"
             name="userJob"
@@ -73,7 +79,10 @@
             type="text"
             required
           />
-          <span class="popup__input-error input-job-error" id="userJobError"></span>
+          <span
+            class="popup__input-error input-job-error"
+            id="userJobError"
+          ></span>
           <button
             class="popup__button button"
             aria-label="Сохранить"
@@ -85,7 +94,7 @@
       </div>
     </div>
 
-    <div class="popup popup-card">
+    <div class="popup popup__card">
       <div class="popup__container">
         <h2 class="popup__title">Новое место</h2>
         <button
@@ -93,11 +102,7 @@
           aria-label="Закрыть"
           type="button"
         ></button>
-        <form
-          class="popup__form popup-card__form"
-          name="card_form"
-          novalidate
-        >
+        <form class="popup__form popup-card__form" name="card_form" novalidate>
           <input
             class="popup__input popup__input_place_top"
             id="input-title"
@@ -108,7 +113,10 @@
             type="text"
             required
           />
-          <span class="popup__input-error input-title-error" id="cardTitleError"></span>
+          <span
+            class="popup__input-error input-title-error"
+            id="cardTitleError"
+          ></span>
           <input
             class="popup__input popup__input_place_bottom"
             id="input-link"
@@ -117,13 +125,71 @@
             type="url"
             required
           />
-          <span class="popup__input-error input-link-error" id="cardLinkError"></span>
+          <span
+            class="popup__input-error input-link-error"
+            id="cardLinkError"
+          ></span>
           <button
             class="popup__button button"
             aria-label="Создать"
             type="submit"
           >
             Создать
+          </button>
+        </form>
+      </div>
+    </div>
+
+    <div class="popup popup__card-delete">
+      <div class="popup__container">
+        <h2 class="popup__title popup__title-delete">Вы уверены?</h2>
+        <button
+          class="popup__close popup-card__close button"
+          aria-label="Закрыть"
+          type="button"
+        ></button>
+        <button
+          class="popup__button button popup__button-delete"
+          aria-label="Да"
+          type="submit"
+        >
+          Да
+        </button>
+      </div>
+    </div>
+
+    <div class="popup popup__profile-change">
+      <div class="popup__container">
+        <h2 class="popup__title popup__title-change">Обновить аватар</h2>
+        <button
+          class="popup__close popup-profile__close button"
+          aria-label="Закрыть"
+          type="button"
+        ></button>
+        <form
+          class="popup__form popup-profile__form"
+          name="profile_form"
+          novalidate
+        >
+          <input
+            class="popup__input popup__input_place_bottom popup__input-change"
+            name="userJob"
+            placeholder="Введите ссылку на аватар"
+            minlength="2"
+            maxlength="200"
+            type="text"
+            required
+          />
+          <span
+            class="popup__input-error input-job-error"
+            id="userJobError"
+          ></span>
+          <button
+            class="popup__button button"
+            aria-label="Сохранить"
+            type="submit"
+          >
+            Сохранить
           </button>
         </form>
       </div>
@@ -143,7 +209,10 @@
         <button class="element__trash-btn button"></button>
         <div class="element__info">
           <h2 class="element__title"></h2>
-          <button class="element__like button" type="button"></button>
+          <div class="element__like-container">
+            <button class="element__like button" type="button"></button>
+            <span class="element__like-quantity">0</span>
+          </div>
         </div>
       </li>
     </template>
