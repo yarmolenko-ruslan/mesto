@@ -66,6 +66,14 @@ export class FormValidator {
     errorPlace.classList.add(this._errorClass);
   }
 
+  cleanValidError() {
+    this.toggleButtonState();
+    this._inputs.forEach((el) => {
+      const error = this._findInputErrorPlace(el);
+      this._hideInputError(el, error);
+    });
+  }
+
   toggleButtonState() {
     if (this._isInputsValid()) {
       this._button.classList.remove(this._inactiveButtonClass);

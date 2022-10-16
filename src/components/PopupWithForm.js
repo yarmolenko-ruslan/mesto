@@ -8,6 +8,12 @@ export class PopupWithForm extends Popup {
     this._inputsPopup = Array.from(
       this._popup.querySelectorAll(".popup__input")
     );
+    this._submitBtn = document.querySelector(".popup__button");
+    this._actionСhangeTitle = this._submitBtn.textContent;
+    this._changeNameButton = "Создание...";
+    if (this._actionСhangeTitle == "Сохранить") {
+      this._changeNameButton = "Сохранение...";
+    }
   }
 
   _getInputValues() {
@@ -20,8 +26,7 @@ export class PopupWithForm extends Popup {
 
   setInputValues(inputValues) {
     inputValues.forEach((nameValue) => {
-      this._popup.querySelector(`.popup__input[name=${nameValue.name}]`).value =
-        nameValue.value;
+      this._popup.querySelector(`.popup__input[name=${nameValue.name}]`).value = nameValue.value;
     });
   }
 
@@ -33,12 +38,29 @@ export class PopupWithForm extends Popup {
 
   _сallbackFunction(evt) {
     evt.preventDefault();
-    this._callbackSubmitForm(this._getInputValues());
-    this.close();
+    this._waitingRender(true);
+    this._callbackSubmitForm(this._getInputValues())
+      .then(() => {
+        this.close();
+      })
+      .catch((err) => {
+        console.log(err);
+      })
+      .finally(() => {
+        this._waitingRender(false);
+      });
   }
 
   close() {
     super.close();
     this.form.reset();
+  }
+
+  _waitingRender(loading) {
+    if (loading) {
+      this._submitBtn.textContent = this._changeNameButton;
+    } else {
+      this._submitBtn.textContent = this._actionСhangeTitle;
+    }
   }
 }
