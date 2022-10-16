@@ -32,7 +32,7 @@ function submitPopupProfile(inputValues) {
 }
 
 const popupEditUserProfile = new PopupWithForm(
-  ".popup__profile",
+  ".popup-profile",
   submitPopupProfile
 );
 popupEditUserProfile.setEventListeners();
@@ -62,7 +62,7 @@ function submitAvatar(inputValues) {
 }
 
 const popupEditAvatar = new PopupWithForm(
-  ".popup__profile-change",
+  ".popup-avatar",
   submitAvatar
 );
 popupEditAvatar.setEventListeners();
@@ -85,7 +85,7 @@ function submitDeleteCard(id) {
 }
 
 const popupDeleteCard = new PopupWithConfirmation(
-  ".popup__card-delete",
+  ".popup-confirmation",
   submitDeleteCard
 );
 popupDeleteCard.setEventListeners();
@@ -165,7 +165,7 @@ function submitNewLocation(inputValues) {
   });
 }
 
-const popupAddCard = new PopupWithForm(".popup__card", submitNewLocation);
+const popupAddCard = new PopupWithForm(".popup-card", submitNewLocation);
 popupAddCard.setEventListeners();
 
 const formCardValidator = new FormValidator(
