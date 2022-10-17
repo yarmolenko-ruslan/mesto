@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html lang="ru">
   <head>
-    <meta charset="UTF-8" >
+    <meta charset="UTF-8" />
     <meta
       name="viewport"
       content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
-    >
+    />
     <title>Mesto</title>
   </head>
 
@@ -16,7 +16,8 @@
 
     <main class="content">
       <section class="profile">
-        <img src="#" alt="Фотография пользователя" class="profile__avatar" >
+          <img src="#" alt="Фотография пользователя" class="profile__avatar" />
+          <div class="profile__cover"></div>
         <div class="profile__info">
           <h1 class="profile__info-title"></h1>
           <p class="profile__info-subtitle"></p>
@@ -50,11 +51,7 @@
           aria-label="Закрыть"
           type="button"
         ></button>
-        <form
-          class="popup__form"
-          name="profile_form"
-          novalidate
-        >
+        <form class="popup__form" name="profile_form" novalidate>
           <input
             class="popup__input popup__input_place_top"
             name="userName"
@@ -64,7 +61,7 @@
             maxlength="40"
             type="text"
             required
-          >
+          />
           <span
             class="popup__input-error input-name-error"
             id="userNameError"
@@ -78,7 +75,7 @@
             maxlength="200"
             type="text"
             required
-          >
+          />
           <span
             class="popup__input-error input-about-error"
             id="userAboutError"
@@ -112,7 +109,7 @@
             placeholder="Название"
             type="text"
             required
-          >
+          />
           <span
             class="popup__input-error input-title-error"
             id="cardNameError"
@@ -124,7 +121,7 @@
             placeholder="Ссылка на картинку"
             type="url"
             required
-          >
+          />
           <span
             class="popup__input-error input-link-error"
             id="cardLinkError"
@@ -166,18 +163,14 @@
           aria-label="Закрыть"
           type="button"
         ></button>
-        <form
-          class="popup__form"
-          name="avatar_form"
-          novalidate
-        >
+        <form class="popup__form" name="avatar_form" novalidate>
           <input
             class="popup__input popup__input_place_bottom popup__input-change"
             name="avatarLink"
             placeholder="Введите ссылку на аватар"
             type="url"
             required
-          >
+          />
           <span
             class="popup__input-error input-avatar-error"
             id="avatarLinkError"
@@ -196,19 +189,27 @@
     <div class="popup popup-image">
       <div class="popup-image__container">
         <button class="popup__close button"></button>
-        <img class="popup-image__img" src="#" alt="#" >
+        <img class="popup-image__img" src="#" alt="#" />
         <p class="popup-image__title"></p>
       </div>
     </div>
 
     <template class="element-container">
       <li class="element" id="">
-        <img class="element__image" src="#" alt="#" >
-        <button class="element__trash-btn button" aria-label="Удалить карточку" type="button"></button>
+        <img class="element__image" src="#" alt="#" />
+        <button
+          class="element__trash-btn button"
+          aria-label="Удалить карточку"
+          type="button"
+        ></button>
         <div class="element__info">
           <h2 class="element__title"></h2>
           <div class="element__like-container">
-            <button class="element__like button" type="button" aria-label="Нравится"></button>
+            <button
+              class="element__like button"
+              type="button"
+              aria-label="Нравится"
+            ></button>
             <span class="element__like-quantity">0</span>
           </div>
         </div>

@@ -25,8 +25,7 @@ export class Popup {
   }
 
   _handleEscClose(evt) {
-    const buttonEscCode = 27;
-    if (evt.which === buttonEscCode) {
+    if (evt.key === "Escape") {
       this.close();
     }
   }
